@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 190" width="960" height="190" role="img" aria-labelledby="title desc">
+<title id="title">VozLink</title>
+<desc id="desc">A communication platform for calls, messages, groups and collaboration. Abstract project identity, not a product screenshot.</desc>
+
+        <rect x="1" y="1" width="958" height="188" rx="18"
+              fill="#0D1416" stroke="#365048"/>
+        <rect x="28" y="32" width="3" height="126" rx="1.5"
+              fill="#9BD9A5"/>
+        <text x="54" y="61" fill="#A9BDB5" font-size="14"
+              letter-spacing="2"
+              font-family="Consolas, monospace">REAL-TIME COMMUNICATION</text>
+        <text x="51" y="116" fill="#F1F5F3" font-size="43"
+              font-weight="600"
+              font-family="Inter, Segoe UI, Arial, sans-serif">VozLink</text>
+        <text x="54" y="151" fill="#9BD9A5" font-size="14"
+              font-family="Consolas, monospace">A HENRSTUDIO PROJECT</text>
+        <g transform="translate(755 37)" fill="none"
+           stroke="#6FAF91" stroke-width="2">
+    <rect x="4" y="10" width="92" height="64" rx="18"/>
+    <path d="M30 74L16 94V72"/>
+    <rect x="50" y="43" width="92" height="64" rx="18"
+          fill="#182524"/>
+    <path d="M116 107L132 123V102"/>
+    <path d="M69 76H76M87 76H94M105 76H112"
+          stroke="#9BD9A5" stroke-width="4" stroke-linecap="round"/>
+    </g>
+
+</svg>

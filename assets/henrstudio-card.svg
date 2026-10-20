@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 190" width="960" height="190" role="img" aria-labelledby="title desc">
+<title id="title">HenrStudio</title>
+<desc id="desc">A web development brand and platform for digital services and client project tracking. Abstract project identity, not a product screenshot.</desc>
+
+        <rect x="1" y="1" width="958" height="188" rx="18"
+              fill="#0D1416" stroke="#365048"/>
+        <rect x="28" y="32" width="3" height="126" rx="1.5"
+              fill="#9BD9A5"/>
+        <text x="54" y="61" fill="#A9BDB5" font-size="14"
+              letter-spacing="2"
+              font-family="Consolas, monospace">WEBSITES &amp; DIGITAL SOLUTIONS</text>
+        <text x="51" y="116" fill="#F1F5F3" font-size="43"
+              font-weight="600"
+              font-family="Inter, Segoe UI, Arial, sans-serif">HenrStudio</text>
+        <text x="54" y="151" fill="#9BD9A5" font-size="14"
+              font-family="Consolas, monospace">A HENRSTUDIO PROJECT</text>
+        <g transform="translate(755 37)" fill="none"
+           stroke="#6FAF91" stroke-width="2">
+    <rect x="13" y="12" width="121" height="105" rx="17"/>
+    <path d="M13 37H134"/>
+    <circle cx="28" cy="25" r="2" fill="#9BD9A5"/>
+    <circle cx="38" cy="25" r="2" fill="#6FAF91"/>
+    <path d="M43 60V95M43 77H74M74 60V95"
+          stroke="#9BD9A5" stroke-width="4"/>
+    <path d="M92 65H112M92 78H105M92 91H112"/>
+    </g>
+
+</svg>

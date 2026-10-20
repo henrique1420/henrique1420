@@ -1,0 +1,101 @@
+name: Update contribution snake
+
+on:
+  schedule:
+    - cron: "23 4 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: profile-snake
+  cancel-in-progress: false
+
+jobs:
+  generate-and-publish:
+    if: >-
+      github.repository == 'henrique1420/henrique1420' &&
+      github.ref == format('refs/heads/{0}', github.event.repository.default_branch)
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    permissions:
+      contents: write
+
+    steps:
+      - name: Check out profile repository
+        # actions/checkout v6.0.1
+        uses: actions/checkout@8e8c483db84b4bee98b60c0593521ed34d9990e8
+        with:
+          ref: ${{ github.event.repository.default_branch }}
+          persist-credentials: true
+          fetch-depth: 1
+
+      - name: Generate contribution animations
+        # Platane/snk svg-only, verified v3 reference
+        uses: Platane/snk/svg-only@d8f6715049803e982ee5ff501b6b9b7d5deeb09b
+        with:
+          github_user_name: henrique1420
+          github_token: ${{ github.token }}
+          outputs: |
+            dist/snake-light.svg?palette=github-light&color_snake=%232F6B4F&color_dots=%23E6EEE9,%23C8E7D0,%239BD9A5,%236FAF91,%232F6B4F
+            dist/snake-dark.svg?palette=github-dark&color_snake=%23F1F5F3&color_dots=%23182524,%23365048,%234F806A,%236FAF91,%239BD9A5
+
+      - name: Validate SVGs and add accessible static alternatives
+        run: python3 scripts/prepare_snake.py
+
+      - name: Publish generated SVGs to output
+        shell: bash
+        run: |
+          set -euo pipefail
+
+          # All generation and validation completed before switching branches.
+          # dist/ is untracked and remains available after the switch.
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+
+          set +e
+          git ls-remote --exit-code --heads origin output >/dev/null
+          branch_status=$?
+          set -e
+
+          if [ "$branch_status" -eq 0 ]; then
+            git fetch --no-tags origin \
+              refs/heads/output:refs/remotes/origin/output
+            git switch -C output refs/remotes/origin/output
+          elif [ "$branch_status" -eq 2 ]; then
+            git switch --orphan output
+          else
+            echo "::error::Could not inspect the output branch."
+            exit "$branch_status"
+          fi
+
+          cp dist/snake-light.svg snake-light.svg
+          cp dist/snake-dark.svg snake-dark.svg
+          cp dist/snake-light-static.svg snake-light-static.svg
+          cp dist/snake-dark-static.svg snake-dark-static.svg
+
+          git add -- \
+            snake-light.svg \
+            snake-dark.svg \
+            snake-light-static.svg \
+            snake-dark-static.svg
+
+          if git diff --cached --quiet; then
+            echo "Contribution graphics are unchanged." >> "$GITHUB_STEP_SUMMARY"
+            exit 0
+          fi
+
+          git commit -m "chore: update contribution graphics [skip ci]"
+          git push origin HEAD:refs/heads/output
+
+          echo "Published validated contribution graphics to output." \
+            >> "$GITHUB_STEP_SUMMARY"
+
+      - name: Explain failure
+        if: failure()
+        shell: bash
+        run: |
+          echo "::error::Snake update failed. Inspect the failed step and rerun."
+          echo "The workflow did not intentionally delete or replace the last published graphics." \
+            >> "$GITHUB_STEP_SUMMARY"

@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="32" height="32" role="img" aria-labelledby="title desc">
+<title id="title">JavaScript</title>
+<desc id="desc">Original typographic symbol for JavaScript; not an official logo.</desc>
+
+        <rect x="1" y="1" width="30" height="30" rx="8"
+              fill="#182524" stroke="#6FAF91"/>
+        <text x="16" y="20.5" text-anchor="middle"
+              fill="#9BD9A5" font-size="12"
+              font-weight="700"
+              font-family="Consolas, monospace">JS</text>
+
+</svg>

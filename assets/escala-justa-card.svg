@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 190" width="960" height="190" role="img" aria-labelledby="title desc">
+<title id="title">Escala Justa</title>
+<desc id="desc">Work schedule generation and management, configurable rules and fair shift distribution. Abstract project identity, not a product screenshot.</desc>
+
+        <rect x="1" y="1" width="958" height="188" rx="18"
+              fill="#0D1416" stroke="#365048"/>
+        <rect x="28" y="32" width="3" height="126" rx="1.5"
+              fill="#9BD9A5"/>
+        <text x="54" y="61" fill="#A9BDB5" font-size="14"
+              letter-spacing="2"
+              font-family="Consolas, monospace">WORKFORCE SCHEDULING</text>
+        <text x="51" y="116" fill="#F1F5F3" font-size="43"
+              font-weight="600"
+              font-family="Inter, Segoe UI, Arial, sans-serif">Escala Justa</text>
+        <text x="54" y="151" fill="#9BD9A5" font-size="14"
+              font-family="Consolas, monospace">A HENRSTUDIO PROJECT</text>
+        <g transform="translate(755 37)" fill="none"
+           stroke="#6FAF91" stroke-width="2">
+    <rect x="15" y="17" width="118" height="99" rx="15"/>
+    <path d="M15 46H133M43 7V29M105 7V29"/>
+    <path d="M38 65H49M68 65H79M98 65H109M38 87H49M68 87H79"
+          stroke-linecap="round" stroke-width="6"/>
+    <path d="M96 87L104 95L120 77" stroke="#9BD9A5"
+          stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+    </g>
+
+</svg>
